@@ -4,7 +4,7 @@ from aiogram.filters import CommandStart, Command
 from settings.const_messages import start_message, start_kb, check_sync_command, check_epoch_command, watchdog_status, \
     eywa_watchdog_already_started_message, sync_monitoring_alert_message, eywa_watchdog_stopped_message, \
     eywa_watchdog_started_message, eywa_started_stopping_message, eywa_watchdog_already_stopped_message, \
-    check_current_epoch_command
+    check_current_epoch_command, check_bridge_version_command
 from settings.config import TTS
 from cmd import execute_command
 
@@ -84,4 +84,11 @@ async def stop_eywa_watchdog(message: types.Message) -> None:
 async def check_current_epoch(message: types.Message) -> None:
     print("Processing /check_current_epoch command")
     result = execute_command(check_current_epoch_command)
+    await message.answer(result)
+
+@router.message(F.text.lower() == 'check bridge version')
+@router.message(Command('check_bridge_version'))
+async def check_current_epoch(message: types.Message) -> None:
+    print("Processing /check_bridge_version command")
+    result = execute_command(check_bridge_version_command)
     await message.answer(result)
