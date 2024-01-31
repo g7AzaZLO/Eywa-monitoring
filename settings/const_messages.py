@@ -23,7 +23,11 @@ start_kb = ReplyKeyboardMarkup(
         [
             KeyboardButton(text='Check synchronization'),
             KeyboardButton(text='Check node hits in epochs'),
+        ],
+        [
             KeyboardButton(text='Start EYWA synchronization monitoring'),
+        ],
+        [
             KeyboardButton(text='Stop monitoring EYWA synchronization'),
         ],
     ],
