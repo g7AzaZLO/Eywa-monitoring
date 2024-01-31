@@ -17,6 +17,7 @@ async def main() -> None:
     await bot.delete_webhook(drop_pending_updates=True)
     print("Bot started")
     await dp.start_polling(bot)
+    print("Bot stopped")
 
 
 asyncio.run(main())
