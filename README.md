@@ -50,7 +50,7 @@ Allows you to check node synchronization in real time
 Allows you to check which epochs your node has fallen into. If the epoch number is in brackets (15), then your node is in that epoch
 ![image](https://github.com/g7AzaZLO/eywa-monitoring/assets/59707245/09f526b7-d728-4aed-8042-fc2640eabf01)
 ### Start monitoring EYWA synchronization
-Allows you to start monitoring node synchronization in real time. By standard, monitoring checks synchronization every 30 seconds (TTS parameter in config.py). If the node is not in FULLY_SYNCED status, the bot sends you a notification message
+Allows you to start monitoring node synchronization in real time. By standard, monitoring checks synchronization every 60 seconds (TTS parameter in config.py). If the node is not in FULLY_SYNCED status, the bot sends you a notification message
 ![image](https://github.com/g7AzaZLO/eywa-monitoring/assets/59707245/9d4fd0a7-fd94-4cce-9083-e22904de8e49)
 ### Stop monitoring EYWA synchronization
 Stops node synchronization monitoring
