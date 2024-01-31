@@ -31,6 +31,7 @@ async def check_epoch(message: types.Message) -> None:
     result = execute_command(check_epoch_command)
     await message.answer(result)
 
+
 # Обработка команды /start_eywa_watchdog
 @router.message(F.text.lower() == 'start eywa synchronization monitoring')
 @router.message(Command('start_eywa_watchdog'))
@@ -50,6 +51,7 @@ async def start_eywa_watchdog(message: types.Message) -> None:
             time.sleep(TTS)
     else:
         await message.answer(eywa_watchdog_already_started_message)
+
 
 # Обработка команды /stop_eywa_watchdog
 @router.message(F.text.lower() == 'stop monitoring eywa synchronization')

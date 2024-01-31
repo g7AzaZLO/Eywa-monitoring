@@ -10,7 +10,8 @@ eywa_watchdog_stopped_message = "Eywa synchronization monitoring is stopped"
 private = [
     BotCommand(command='sync', description='Check synchronization'),
     BotCommand(command='epoch', description='Check node hits in epochs'),
-    BotCommand(command='start_eywa_watchdog', description='Start EYWA synchronization monitoring')
+    BotCommand(command='start_eywa_watchdog', description='Start EYWA synchronization monitoring'),
+    BotCommand(command='stop_eywa_watchdog', description='Stop monitoring eywa synchronization')
 ]
 
 # Клавиатура в тг
@@ -20,6 +21,7 @@ start_kb = ReplyKeyboardMarkup(
             KeyboardButton(text='Check synchronization'),
             KeyboardButton(text='Check node hits in epochs'),
             KeyboardButton(text='Start EYWA synchronization monitoring'),
+            KeyboardButton(text='Stop monitoring eywa synchronization'),
         ],
     ],
     resize_keyboard=True,
