@@ -49,19 +49,19 @@ async def start_eywa_watchdog(message: types.Message) -> None:
         while True:
             print("check sync in watchdog")
             result = execute_command(check_sync_command)
-            if "FULLY_SYNCED" in result:
-                print("watchdog say 'all good'")
-                continue
-            else:
-                print("watchdog say anything is bad")
-                await message.answer(sync_monitoring_alert_message + "\n\n" + result)
             if not watchdog_status:
                 print("stop watchdog in while true")
                 await message.answer(eywa_watchdog_stopped_message)
                 break
-            print("start sleep")
-            time.sleep(TTS)
-            print("continue")
+            if "FULLY_SYNCED" in result:
+                print("watchdog say 'all good'")
+                print("start sleep")
+                time.sleep(TTS)
+                print("continue")
+                continue
+            else:
+                print("watchdog say anything is bad")
+                await message.answer(sync_monitoring_alert_message + "\n\n" + result)
     else:
         await message.answer(eywa_watchdog_already_started_message)
 
