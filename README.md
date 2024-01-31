@@ -2,7 +2,7 @@
 ### 1 step
 Download bot
 ```
-sudo git clone https://github.com/g7AzaZLO/eywa-monitoring.git
+sudo git clone https://github.com/g7AzaZLO/Eywa-monitoring.git
 ```
 ![image](https://github.com/g7AzaZLO/eywa-monitoring/assets/59707245/264673fb-437c-4043-a905-1548affc682d)
 ### 2 step
@@ -41,7 +41,8 @@ D<br />
 
 ### 4 step
 Open and /start your bot in Telegram
-![image](https://github.com/g7AzaZLO/eywa-monitoring/assets/59707245/6ce138c9-7f48-44e5-a80b-92d6cec69e06)
+![image](https://github.com/g7AzaZLO/Eywa-monitoring/assets/59707245/4dc7ffd2-3fd8-4705-8abd-fa5015d10ec2)
+
 
 # Function
 ### Check synchronization
