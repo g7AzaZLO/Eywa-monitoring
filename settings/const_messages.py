@@ -13,7 +13,7 @@ eywa_watchdog_already_stopped_message = "Watchdog already stopped"
 private = [
     BotCommand(command='sync', description='Check synchronization'),
     BotCommand(command='epoch', description='Check node hits in epochs'),
-    BotCommand(command='start_eywa_watchdog', description='Start EYWA synchronization monitoring'),
+    BotCommand(command='start_eywa_watchdog', description='Start monitoring EYWA synchronization'),
     BotCommand(command='stop_eywa_watchdog', description='Stop monitoring EYWA synchronization')
 ]
 
@@ -25,7 +25,7 @@ start_kb = ReplyKeyboardMarkup(
             KeyboardButton(text='Check node hits in epochs'),
         ],
         [
-            KeyboardButton(text='Start EYWA synchronization monitoring'),
+            KeyboardButton(text='Start monitoring EYWA synchronization'),
         ],
         [
             KeyboardButton(text='Stop monitoring EYWA synchronization'),
