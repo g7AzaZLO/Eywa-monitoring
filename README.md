@@ -40,9 +40,9 @@ ctrl + a<br />
 D<br />
 
 ### 4 step
-Open and /start your bot in Telegram
-![image](https://github.com/g7AzaZLO/Eywa-monitoring/assets/59707245/4dc7ffd2-3fd8-4705-8abd-fa5015d10ec2)
+Open and /start your bot in Telegram<br />
 
+![image](https://github.com/g7AzaZLO/Eywa-monitoring/assets/59707245/4dc7ffd2-3fd8-4705-8abd-fa5015d10ec2)
 
 # Function
 ### Check synchronization
