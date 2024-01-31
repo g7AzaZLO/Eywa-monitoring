@@ -1,5 +1,4 @@
 import asyncio
-import time
 from aiogram import types, Router, F
 from aiogram.filters import CommandStart, Command
 from settings.const_messages import start_message, start_kb, check_sync_command, check_epoch_command, watchdog_status, \
@@ -56,7 +55,7 @@ async def start_eywa_watchdog(message: types.Message) -> None:
             if "FULLY_SYNCED" in result:
                 print("watchdog say 'all good'")
                 print("start sleep")
-                time.sleep(TTS)
+                await asyncio.sleep(TTS)
                 print("continue")
                 continue
             else:
