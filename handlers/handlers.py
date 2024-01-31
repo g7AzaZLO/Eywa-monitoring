@@ -59,7 +59,9 @@ async def start_eywa_watchdog(message: types.Message) -> None:
                 print("stop watchdog in while true")
                 await message.answer(eywa_watchdog_stopped_message)
                 break
+            print("start sleep")
             time.sleep(TTS)
+            print("continue")
     else:
         await message.answer(eywa_watchdog_already_started_message)
 
