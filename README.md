@@ -56,4 +56,11 @@ Allows you to start monitoring node synchronization in real time. By standard, m
 ### Stop monitoring EYWA synchronization
 Stops node synchronization monitoring
 ![image](https://github.com/g7AzaZLO/eywa-monitoring/assets/59707245/950aebd4-12f1-4cac-bc26-d7f6020dab55)
+### Check current epoch
+Allows you to find out what era you are living in and when it began
+![image](https://github.com/g7AzaZLO/eywa-monitoring/assets/59707245/e07cdf48-a327-4e20-af33-2193ba243c12)
+### Check bridge version
+Allows you to find out what version of bridge is installed on your node
+![image](https://github.com/g7AzaZLO/eywa-monitoring/assets/59707245/be06828a-ef97-4352-bdc6-2cd2995c4040)
+
 ### The bot consumes about 100 megabytes of RAM and less than 1% of the CPU
