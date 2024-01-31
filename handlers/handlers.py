@@ -4,7 +4,7 @@ from aiogram import types, Router, F
 from aiogram.filters import CommandStart, Command
 from settings.const_messages import start_message, start_kb, check_sync_command, check_epoch_command, watchdog_status, \
     eywa_watchdog_already_started_message, sync_monitoring_alert_message, eywa_watchdog_stopped_message, \
-    eywa_watchdog_started_message
+    eywa_watchdog_started_message, eywa_started_stopping_message
 from settings.config import TTS
 from cmd import execute_command
 
@@ -14,6 +14,7 @@ router = Router()
 # Обработка команды /start
 @router.message(CommandStart())
 async def start_command(message: types.Message) -> None:
+    print("Processing /start command")
     await message.answer(text=start_message, reply_markup=start_kb)
 
 
@@ -21,6 +22,7 @@ async def start_command(message: types.Message) -> None:
 @router.message(F.text.lower() == 'check synchronization')
 @router.message(Command('sync'))
 async def check_sync(message: types.Message) -> None:
+    print("Processing /check_sync command")
     result = execute_command(check_sync_command)
     await message.answer(result)
 
@@ -29,6 +31,7 @@ async def check_sync(message: types.Message) -> None:
 @router.message(F.text.lower() == 'check node hits in epochs')
 @router.message(Command('epoch'))
 async def check_epoch(message: types.Message) -> None:
+    print("Processing /epoch command")
     result = execute_command(check_epoch_command)
     await message.answer(result)
 
@@ -37,17 +40,24 @@ async def check_epoch(message: types.Message) -> None:
 @router.message(F.text.lower() == 'start eywa synchronization monitoring')
 @router.message(Command('start_eywa_watchdog'))
 async def start_eywa_watchdog(message: types.Message) -> None:
+    print("Processing /start_eywa_watchdog command")
     global watchdog_status
     if not watchdog_status:
         watchdog_status = True
+        print("set watchdog_status = True")
         await message.answer(eywa_watchdog_started_message)
         while True:
+            print("check sync in watchdog")
             result = execute_command(check_sync_command)
             if "FULLY_SYNCED" in result:
+                print("watchdog say 'all good'")
                 continue
             else:
+                print("watchdog say anything is bad")
                 await message.answer(sync_monitoring_alert_message + "\n\n" + result)
             if not watchdog_status:
+                print("stop watchdog in while true")
+                await message.answer(eywa_watchdog_stopped_message)
                 break
             time.sleep(TTS)
     else:
@@ -58,6 +68,7 @@ async def start_eywa_watchdog(message: types.Message) -> None:
 @router.message(F.text.lower() == 'stop monitoring eywa synchronization')
 @router.message(Command('stop_eywa_watchdog'))
 async def stop_eywa_watchdog(message: types.Message) -> None:
+    print("Processing /stop_eywa_watchdog command")
     global watchdog_status
     watchdog_status = False
-    await message.answer(eywa_watchdog_stopped_message)
+    await message.answer(eywa_started_stopping_message)
