@@ -3,7 +3,7 @@ from aiogram import types, Router, F
 from aiogram.filters import CommandStart, Command
 from settings.const_messages import start_message, start_kb, check_sync_command, check_epoch_command, watchdog_status, \
     eywa_watchdog_already_started_message, sync_monitoring_alert_message, eywa_watchdog_stopped_message, \
-    eywa_watchdog_started_message, eywa_started_stopping_message
+    eywa_watchdog_started_message, eywa_started_stopping_message, eywa_watchdog_already_stopped_message
 from settings.config import TTS
 from cmd import execute_command
 
@@ -71,5 +71,8 @@ async def start_eywa_watchdog(message: types.Message) -> None:
 async def stop_eywa_watchdog(message: types.Message) -> None:
     print("Processing /stop_eywa_watchdog command")
     global watchdog_status
-    watchdog_status = False
-    await message.answer(eywa_started_stopping_message)
+    if watchdog_status:
+        watchdog_status = False
+        await message.answer(eywa_started_stopping_message)
+    else:
+        await message.answer(eywa_watchdog_already_stopped_message)

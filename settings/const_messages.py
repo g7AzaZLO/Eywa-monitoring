@@ -7,6 +7,7 @@ sync_monitoring_alert_message = "Sync monitoring alert: node is not FULLY_SYNCED
 eywa_watchdog_started_message = "EYWA synchronization monitoring started"
 eywa_watchdog_stopped_message = "Eywa synchronization monitoring is stopped"
 eywa_started_stopping_message = "Start stopping monitoring eywa synchronization"
+eywa_watchdog_already_stopped_message = "Watchdog already stopped"
 
 # Команды которые прописываются в бота при его запуске
 private = [
