@@ -23,6 +23,7 @@ start_kb = ReplyKeyboardMarkup(
     resize_keyboard=True,
 )
 
+# Команды
 watchdog_status = False
 check_sync_command = 'curl -s 127.0.0.1:8081/v1/sync_state|jq -r \'("NODE SYNC STATE: "+.result.state),((["CHAIN","SYNCED","DIFFS","sysDIFFS"] | (., map(length*"-"))),(.result.details|keys[] as $k |["\($k)", "\(.[$k].synced)", "\(.[$k].diffs.processedHeight)", "\(.[$k].diffs.sysProcessedHeight)"])|@tsv)\''
 check_epoch_command = 'hostid=$(curl -s http://0.0.0.0:8081/v1/validator_info|jq -r .hostId);height=$(curl -s http://0.0.0.0:8081/v1/current_height|jq -r .result); for i in $(seq 1 $height); do result=$(curl -s -d chain_id=0 -d block_height=$i http://0.0.0.0:8081/v1/block|jq .events[].epochEvent.hostIds|grep $hostid); if [ -z $result ];then printf " $i "; else printf " ($i) ";fi;done;echo'
