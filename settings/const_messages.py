@@ -4,6 +4,7 @@ from aiogram.types import BotCommand, ReplyKeyboardMarkup, KeyboardButton
 start_message = "Eywa Monitoring Bot\n\nРазработчик - [G7]AzaZLO\nG7 Telegram - https://t.me/g7monitor"
 eywa_watchdog_already_started_message = 'Watchdog already started'
 sync_monitoring_alert_message = "Sync monitoring alert: node is not FULLY_SYNCED"
+eywa_watchdog_started_message = "EYWA synchronization monitoring started"
 eywa_watchdog_stopped_message = "Eywa synchronization monitoring is stopped"
 
 # Команды которые прописываются в бота при его запуске

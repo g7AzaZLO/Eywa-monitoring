@@ -3,7 +3,8 @@ import time
 from aiogram import types, Router, F
 from aiogram.filters import CommandStart, Command
 from settings.const_messages import start_message, start_kb, check_sync_command, check_epoch_command, watchdog_status, \
-    eywa_watchdog_already_started_message, sync_monitoring_alert_message, eywa_watchdog_stopped_message
+    eywa_watchdog_already_started_message, sync_monitoring_alert_message, eywa_watchdog_stopped_message, \
+    eywa_watchdog_started_message
 from settings.config import TTS
 from cmd import execute_command
 
@@ -39,7 +40,7 @@ async def start_eywa_watchdog(message: types.Message) -> None:
     global watchdog_status
     if not watchdog_status:
         watchdog_status = True
-        await message.answer("EYWA synchronization monitoring started")
+        await message.answer(eywa_watchdog_started_message)
         while True:
             result = execute_command(check_sync_command)
             if "FULLY_SYNCED" in result:
