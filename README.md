@@ -30,6 +30,7 @@ screen -S eywa_monitoring
 Start the bot
 ```
 cd ..
+pip3 install -r requirements.txt
 python app.py
 ```
 ![image](https://github.com/g7AzaZLO/eywa-monitoring/assets/59707245/d641d9af-0f36-4b4e-ba75-dd183ee8cee1)
