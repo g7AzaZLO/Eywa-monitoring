@@ -1,3 +1,6 @@
+# Create bot
+Go to https://t.me/BotFather and create new bot
+
 # Install 
 ### 1 step
 Download bot
