@@ -78,7 +78,7 @@ async def stop_eywa_watchdog(message: types.Message) -> None:
     else:
         await message.answer(eywa_watchdog_already_stopped_message)
 
-
+# Обработка команды /check_current_epoch
 @router.message(F.text.lower() == 'check current epoch')
 @router.message(Command('check_current_epoch'))
 async def check_current_epoch(message: types.Message) -> None:
@@ -86,6 +86,7 @@ async def check_current_epoch(message: types.Message) -> None:
     result = execute_command(check_current_epoch_command)
     await message.answer(result)
 
+# Обрабтка команды /check_bridge_version
 @router.message(F.text.lower() == 'check bridge version')
 @router.message(Command('check_bridge_version'))
 async def check_current_epoch(message: types.Message) -> None:
