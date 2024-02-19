@@ -62,6 +62,9 @@ async def start_eywa_watchdog(message: types.Message) -> None:
             else:
                 print("watchdog say anything is bad")
                 await message.answer(sync_monitoring_alert_message + "\n\n" + result)
+                print("start sleep")
+                await asyncio.sleep(TTS)
+                print("continue")
     else:
         await message.answer(eywa_watchdog_already_started_message)
 
